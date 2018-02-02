@@ -13,6 +13,7 @@ use Sort\Models\Flight;
 class Sorter
 {
     private $cards;
+    private $sortedCards;
     function __construct($cards = [])
     {
         $this->cards = $cards;
@@ -21,8 +22,9 @@ class Sorter
     public function sort(){
         $cards = $this->cards;
         $noOfCards = count($cards);
-        $sortedCards = $this->feacher($cards, $noOfCards, 0);
-        return $this->html($sortedCards);
+        $this->sortedCards = $this->feacher($cards, $noOfCards, 0);
+        return $this;
+//        return $this->html($sortedCards);
     }
 
     private function feacher($cards,$noOfCards, $cardIndex){
@@ -50,13 +52,20 @@ class Sorter
         return $cards;
     }
 
-    private function html($sortedCards){
+
+    public function toArray(){
+        return $this->sortedCards;
+    }
+
+    public function toHTML(){
+        $sortedCards = $this->sortedCards;
         $html = '<ol>';
         foreach ($sortedCards as $card){
             $className = "Sort\\Models\\".$card['transportationType'];
             $obj = new $className($card);
             $html .= '<li>'.$obj->text().'</li>';
         }
+        $html .= '<li>You have arrived at your final destination.</li>';
         $html .= '</ol>';
         return $html;
     }

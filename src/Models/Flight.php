@@ -27,19 +27,19 @@ class Flight extends Transportation
     }
 
 
-    public function transportationNumber(){
+    private function transportationNumber(){
         if (is_null($this->transportationNumber))
             return '';
         return $this->transportationNumber;
     }
 
-    public function gate(){
+    private function gate(){
         if (is_null($this->gate))
             return '';
         return 'Gate '.$this->gate;
     }
 
-    public function baggage(){
+    private function baggage(){
         if (is_null($this->baggage))
             return 'Baggage will we automatically transferred from your last leg.';
         return 'Baggage drop at ticket counter '.$this->baggage;

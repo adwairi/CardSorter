@@ -23,7 +23,7 @@ class Train extends Transportation
     }
 
 
-    public function transportationNumber(){
+    private function transportationNumber(){
         if (is_null($this->transportationNumber))
             return '';
         return $this->transportationNumber;

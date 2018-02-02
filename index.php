@@ -45,48 +45,6 @@ $cards = [
 ];
 
 $sorter = new Sort\Sorter($cards);
-$sortedCards = $sorter->sort();
-echo $sortedCards;
-
-//
-//
-//$x = recursiveSort($cards_array, count($cards_array), 0);
-//print_r($cards_array);
-//echo '<br/>';
-//print_r($x);
-//function recursiveSort($cards_array, $cards_count, $start_index = 0)
-//{
-//    if ($start_index == $cards_count - 1) {
-//        return $cards_array;
-//    }
-//    for ($i = $start_index; $i < $cards_count; $i++) {
-//        for ($k = $i + 1; $k < $cards_count; $k++) {
-//            if ($cards_array[$i]['from'] == $cards_array[$k]['to']) {
-//                $cards_array = swapIndexes($cards_array, $i, $k);
-//
-//                return recursiveSort($cards_array, $cards_count, $i);
-//            }
-//        }
-//    }
-//
-//    return $cards_array;
-//}
-//
-//function swapIndexes($cards_array, $i, $k)
-//{
-//    $temp            = $cards_array[$i];
-//    $cards_array[$i] = $cards_array[$k];
-//    $cards_array[$k] = $temp;
-//
-//    return $cards_array;
-//}
-
-//foreach ($arr as $k=>$trip){
-//    $from[$k] = $trip['from'];
-//    $to[$k] = $trip['to'];
-//}
-//$start = array_diff($from, array_intersect($to,$from));
-//
-//print_r($start); echo '<br/>';
-//print_r($from); echo '<br/>';
-//print_r($to);
+$sortedCardsObj = $sorter->sort();
+//print_r($sortedCardsObj->toArray());
+echo $sortedCardsObj->toHTML();

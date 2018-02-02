@@ -20,7 +20,7 @@ class Bus extends Transportation
         }
     }
 
-    public function busName(){
+    private function busName(){
         if (is_null($this->busName))
             return $this->transportationType();
         return $this->busName;
@@ -28,8 +28,8 @@ class Bus extends Transportation
 
     public function text(){
         $text = 'Take '. $this->busName();
-        $text .= $this->from().' '.$this->to().'. ';
-        $text .= $this->seat().'.';
+        $text .= ' '.$this->from().' '.$this->to().'. ';
+        $text .= ' '.$this->seat().'.';
 
         return $text;
     }
