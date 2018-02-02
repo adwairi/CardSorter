@@ -4,17 +4,17 @@ phpunit EmptyTestCaseTest ../_files/EmptyTestCaseTest.php
 <?php
 $_SERVER['argv'][1] = '--no-configuration';
 $_SERVER['argv'][2] = 'EmptyTestCaseTest';
-$_SERVER['argv'][3] = __DIR__ . '/../_files/EmptyTestCaseTest.php';
+$_SERVER['argv'][3] = dirname(dirname(__FILE__)) . '/_files/EmptyTestCaseTest.php';
 
 require __DIR__ . '/../bootstrap.php';
-PHPUnit\TextUI\Command::main();
+PHPUnit_TextUI_Command::main();
 ?>
 --EXPECTF--
 PHPUnit %s by Sebastian Bergmann and contributors.
 
 W                                                                   1 / 1 (100%)
 
-Time: %s, Memory: %s
+Time: %s, Memory: %sMb
 
 There was 1 warning:
 

@@ -28,7 +28,7 @@ class Bus extends Transportation
 
     public function text(){
         $text = 'Take '. $this->busName();
-        $text .= ' '.$this->from().' '.$this->to().'. ';
+        $text .= ' '.$this->from().' '.$this->to().'.';
         $text .= ' '.$this->seat().'.';
 
         return $text;
